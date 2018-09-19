@@ -6,7 +6,7 @@ spring:
       uri: mongodb://192.168.3.170:27017/xian62_0
   redis:
     database: 0
-    host: hyb-test-vm00.huayingbaolicai.com
+    host: 118.178.226.155
     port: 6379
     password: null
     jedis:
