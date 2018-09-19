@@ -1,0 +1,28 @@
+server:
+  port: 8004
+spring:
+  cloud:
+    gateway:
+      default-filters:
+      routes:
+      #------------------------------------------------------------------------
+      - id: api
+        uri: lb://api
+        predicates:
+        - Path= /api/**
+        filters:
+        - StripPrefix= 1
+      #------------------------------------------------------------------------
+      - id: pay
+        uri: lb://pay
+        predicates:
+        - Path= /pay/**
+        filters:
+        - StripPrefix= 1
+      #------------------------------------------------------------------------
+      - id: backoffice
+        uri: lb://backoffice
+        predicates:
+        - Path= /backoffice/**
+        filters:
+        - StripPrefix= 1
